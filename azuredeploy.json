@@ -37,10 +37,6 @@
         "ubuntuOSVersion": {
             "type": "string",
             "defaultValue": "18.04.0-LTS",
-            "allowedValues": [
-                "16.04.0-LTS",
-                "18.04-LTS"
-            ],
             "metadata": {
                 "description": "The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version."
             }
@@ -148,7 +144,8 @@
                 "name": "[parameters('osDiskType')]"
             },
             "kind": "Storage",
-            "properties": {}
+            "properties": {
+            }
         },
         {
             "name": "[variables('nicName')]",
@@ -292,10 +289,6 @@
         "adminUsername": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
-        },
-        "hostname": {
-            "type": "string",
-            "value": "[reference(variables('publicIPAddressName')).dnsSettings.fqdn]"
         }
     }
 }
