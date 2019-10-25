@@ -38,7 +38,6 @@
             "type": "string",
             "defaultValue": "18.04-LTS",
             "allowedValues": [
-                "16.04.0-LTS",
                 "18.04-LTS"
             ],
             "metadata": {
@@ -74,7 +73,7 @@
         "networkSecurityGroupRules": {
             "type": "array",
             "metadata": {
-                "description": "Allows http, https and ssh by default."
+                "description": "Allows http and https by default."
             },
             "defaultValue": [
                 {
