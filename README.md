@@ -10,6 +10,12 @@ You will need an Azure account to be able to spin your JupyterHub.
 
 :star: You can get a free acount with 150pounds worth of credit folling 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard)
 
+
+## :thinking: What is the Littlest JupyterHub?
+A simple JupyterHub distribution for a small (1-100) number of users on a single server. You can find more info about it in the official docs 👉🏼
+[https://the-littlest-jupyterhub.readthedocs.io/en/latest/index.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/index.html)
+
+
 ## What in in this repo?
 
 This repository contains the ARM (Azure Resource Manager) template for the Littlest JupyterHub deployment. Allowing you to deploy a vanilla Littlest JupyterHub by clicking on the deploy to Azure blue button here.
@@ -38,9 +44,46 @@ To deploy your TLJH follow these steps:
 - **OS Disk Type**: you have the options Standard HDD (LRS), Standard SSD and Premium SSD (for more details see [the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard))
 - **Data Disk Size**: the size of your Data disk size (for more details [visit the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard))
 
-## :thinking: What is the Littlest JupyterHub?
-A simple JupyterHub distribution for a small (1-100) number of users on a single server. You can find more info about it in the official docs 👉🏼
-[https://the-littlest-jupyterhub.readthedocs.io/en/latest/index.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/index.html)
+By default the template allows network traffic through `http` and `https`, do not modify the `network and security group rules`.
+
+5. Once completed read the terms and conditions and if you are happy with them tick the `I agree to the terms and conditions stated above` box and click on the **Purchase button**.
+
+The deployment will take around 10 minutes - first all your resources will be deployed and then THLJ will be installed on your VM.
+
+6. To check your new Virtual Machine Expand the left-hand panel by clicking on the “>>” button on the top left corner of your dashboard. Find the Virtual Machines tab and click on it.
+
+![azure portal vm](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/azure-vms.png)
+
+7. Click on your Virtual Machine, copy the **Public IP address** and access it on the web browser.
+
+![ip](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/ip-vm.png)
+
+🚨 Note this page will be unavailable during installation. If this happens give it a bit longer and refresh the page.
+
+Once the installation is complete you will get a login page 
+![login](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/first-login.png)
+
+8. Login using the **admin username and password** you created before
+9. Congratulations you have a running working JupyterHub 🎉
+
+You are now ready to add users, install packages and star using your JupyterHub. For instructions on how to do this visit [the official documentation](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html#step-2-adding-more-users)
+
+## 🚧 Architecture
+When you deploy a JupyterHub on Azure (either using the Deploy to Azure button or follow the steps from the docs) the following resources are created:
+
+![vms](assets/schematic_hires.png)
+
+They are all grouped together in the same region defined for your Resource group.
+
+Details on how to delete and stop your virtual machine can be found at [https://the-littlest-jupyterhub.readthedocs.io/en/latest/howto/providers/azure.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/howto/providers/azure.html).
+
+If you want to get rid of all the associated resources after you are done with your JupyterHub the easiest way to do it is deleting the resource group altoghether (providing you do not have other resources in this group that you might need later).
+
+To delete a resource group:
+
+1. Go to “Reosurce groups” on the left hand panel of your Azure Portal
+2. Click on your resource group
+3. Click on “Delete resource group” you will then be asked to confirm the operation. This operation will take between 5 and 10 minutes
 
 ## :book: Resources
 Here are some links that you might find useful when using the contents in this repo.
