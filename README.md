@@ -1,11 +1,22 @@
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2Fazure-quickstart-TLJH%2Fmaster%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-a06ee1.svg)](https://opensource.org/licenses/MIT)
+
 # The Littlest JupyterHub Azure button deploy
 
-## What do you need?
+- [The Littlest JupyterHub Azure button deploy](#the-littlest-jupyterhub-azure-button-deploy)
+  - [Pre requisites](#pre-requisites)
+  - [:thinking: What is the Littlest JupyterHub?](#thinking-what-is-the-littlest-jupyterhub)
+  - [What is in this repo?](#what-is-in-this-repo)
+  - [💻 How does the Deploy on Azure button work?](#%f0%9f%92%bb-how-does-the-deploy-on-azure-button-work)
+  - [🚧 Architecture](#%f0%9f%9a%a7-architecture)
+  - [:book: Resources](#book-resources)
+  - [Issues and contributing](#issues-and-contributing)
+
+## Pre requisites
 You will need an Azure account to be able to spin your JupyterHub. 
 
 :star: You can get a free acount with 150pounds worth of credit folling 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard)
@@ -16,7 +27,7 @@ A simple JupyterHub distribution for a small (1-100) number of users on a single
 [https://the-littlest-jupyterhub.readthedocs.io/en/latest/index.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/index.html)
 
 
-## What in in this repo?
+## What is in this repo?
 
 This repository contains the ARM (Azure Resource Manager) template for the Littlest JupyterHub deployment. Allowing you to deploy a vanilla Littlest JupyterHub by clicking on the deploy to Azure blue button here.
 
@@ -93,3 +104,10 @@ Here are some links that you might find useful when using the contents in this r
 - [VM available regions](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines&WT.mc_id=TLJHbutton-github-taallard)
 - [Azure VM sizes](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=TLJHbutton-github-taallard)
 - [Azure VMs disks](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)
+
+
+## Issues and contributing
+
+Contributions are welcome. Also if you encounter any issues please go ahead and create an issue in this repo.
+
+-- Contributing guidelines coming soon --
