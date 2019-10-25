@@ -5,9 +5,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-a06ee1.svg)](https://opensource.org/licenses/MIT)
 
-# The Littlest JupyterHub Azure button deploy
+# The Littlest JupyterHub deploy to Azure button
 
-- [The Littlest JupyterHub Azure button deploy](#the-littlest-jupyterhub-azure-button-deploy)
+- [The Littlest JupyterHub deploy to Azure button](#the-littlest-jupyterhub-deploy-to-azure-button)
   - [Pre requisites](#pre-requisites)
   - [:thinking: What is the Littlest JupyterHub?](#thinking-what-is-the-littlest-jupyterhub)
   - [What is in this repo?](#what-is-in-this-repo)
