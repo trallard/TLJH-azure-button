@@ -13,13 +13,13 @@
   - [What is in this repo?](#what-is-in-this-repo)
   - [💻 How does the Deploy on Azure button work?](#%f0%9f%92%bb-how-does-the-deploy-on-azure-button-work)
   - [🚧 Architecture](#%f0%9f%9a%a7-architecture)
-  - [:book: Resources](#book-resources)
+  - [:book: Additional resources](#book-additional-resources)
   - [Issues and contributing](#issues-and-contributing)
 
 ## Pre requisites
 You will need an Azure account to be able to spin your JupyterHub. 
 
-:star: You can get a free acount with 150pounds worth of credit folling 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard)
+:star: You can get a free acount with 150 USD worth of credit following 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard) 👈🏼
 
 
 ## :thinking: What is the Littlest JupyterHub?
@@ -29,23 +29,25 @@ A simple JupyterHub distribution for a small (1-100) number of users on a single
 
 ## What is in this repo?
 
-This repository contains the ARM (Azure Resource Manager) template for the Littlest JupyterHub deployment. Allowing you to deploy a vanilla Littlest JupyterHub by clicking on the deploy to Azure blue button here.
+This repository contains the ARM (Azure Resource Manager) template for the Littlest JupyterHub deployment. Allowing you to deploy a vanilla Littlest JupyterHub by clicking on the deploy to Azure blue button at the top of this document.
 
 ## 💻 How does the Deploy on Azure button work?
 The ARM template contains all the basic configuration needed to deploy a your own  Littlest JupyterHub on Azure. 
 
-The ARM template follows the configuration detailed in [https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html). But it reduces some of the friction by eliminating the need to create resources manually using the Azure portal.
+This template follows the configuration detailed in [https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html). But it reduces some of the friction by eliminating the need to create resources manually using the Azure portal.
 
-To deploy your TLJH follow these steps:
+🚨 Note that you still need to manually remove your resources when you are done using them.
 
-1. Create an Azure account. 
+🚧 To deploy your TLJH follow these steps:
+
+1. Create an Azure account (if you need a free one go to 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard) 👈🏼)
 2. Click on the `Deploy to Azure` button at the top of the Readme. This will redirect you to the Azure portal login page.
 3. Login to your account.
-4. Fill in the details in the next screen
+4. Fill in the details in the next screen:
 
 ![custom template](assets/Custom_deployment_-_Microsoft_Azure.png)
 
-- **subscription**: choose the subscription you want to use (e.g. Free Trial)
+- **Subscription**: choose the subscription you want to use (e.g. Free Trial)
 - **Resource group**: this will keep all of our resources together. If you have never created a resource group click on `Create new` and give it a meaningful name (e.g. jupyter-resources)
 - **Location**: this is the Azure region where all your resources will be located (e.g. WestEurope, you can check all the available regions [here](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines&WT.mc_id=TLJHbutton-github-taallard))
 - **Virtual Machine Name**: the name for your virtual machine
@@ -77,7 +79,7 @@ Once the installation is complete you will get a login page
 8. Login using the **admin username and password** you created before
 9. Congratulations you have a running working JupyterHub 🎉
 
-You are now ready to add users, install packages and star using your JupyterHub. For instructions on how to do this visit [the official documentation](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html#step-2-adding-more-users)
+👩🏿‍💻✨ You are now ready to add users, install packages and star using your JupyterHub. For instructions on how to do this visit 👉🏼 [the official documentation](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html#step-2-adding-more-users)
 
 ## 🚧 Architecture
 When you deploy a JupyterHub on Azure (either using the Deploy to Azure button or follow the steps from the docs) the following resources are created:
@@ -92,11 +94,11 @@ If you want to get rid of all the associated resources after you are done with y
 
 To delete a resource group:
 
-1. Go to “Reosurce groups” on the left hand panel of your Azure Portal
-2. Click on your resource group
-3. Click on “Delete resource group” you will then be asked to confirm the operation. This operation will take between 5 and 10 minutes
+1. Go to "Resource groups” on the left hand panel of your Azure Portal.
+2. Click on the resource group that contains your JupyterHub resources.
+3. Click on “Delete resource group” you will then be asked to confirm the operation. This operation will take between 5 and 10 minutes.
 
-## :book: Resources
+## :book:  Additional resources
 Here are some links that you might find useful when using the contents in this repo.
 
 - [Azure Resource Manger templates docs](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview?WT.mc_id=TLJHbutton-github-taallard)
