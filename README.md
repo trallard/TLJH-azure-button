@@ -112,4 +112,4 @@ Here are some links that you might find useful when using the contents in this r
 
 Contributions are welcome. Also if you encounter any issues please go ahead and create an issue in this repo.
 
--- Contributing guidelines coming soon --
+The detailed contribution guidelines can be found 👉🏼 [here](./CONTRIBUTING.md)
