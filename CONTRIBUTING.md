@@ -2,11 +2,11 @@
 
 Welcome to this project and thanks  for thinking about contributing to it 🙏🏼.
 
-To get started you  will need a [GitHub account](https://github.com/) and sig in. 
+To get started you  will need a [GitHub account](https://github.com/) and sign in. 
 
 You'll use [Markdown](https://daringfireball.net/projects/markdown) to chat in issues and pull requests on GitHub. You can think of Markdown as a few little symbols around your text that will allow GitHub to render the text with formatting. For example you could write words as bold (**bold**), or in italics (*italics*), or as a link ([link](https://https://youtu.be/dQw4w9WgXcQ)) to another webpage.
 
-GitHub has a helpful page on g[etting started with writing and formatting Markdown on GitHub](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github)
+GitHub has a helpful page on [getting started with writing and formatting Markdown on GitHub](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github)
 
 ## Share your thoughts, bugs, requests and the such
 
