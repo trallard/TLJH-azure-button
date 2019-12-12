@@ -1,32 +1,42 @@
 
 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-a06ee1.svg)](https://opensource.org/licenses/MIT)
 
 # The Littlest JupyterHub deploy to Azure button
 <table width='100%' align="center">
- <tr>
- <td align='center' width='100%' colspan='2'>
- <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
- <img src="http://azuredeploy.net/deploybutton.png"/>
- </a>
- </br>
- </br>
- Deploy your own Littlest JupyterHub using the blue button above 👆🏼. 
- </td>
- </tr>
+    <tr>
+    <td align='center' width='100%'>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+    </a>
+    </br>
+    </br>
+    Deploy your own Littlest JupyterHub using the blue button above 👆🏼. 
+    </td>
+    </tr>
+    <tr>
+    <td align='center' width='100%'>
+    This project is licensed under the MIT OSI license.
+    <br>
+    <br>
+    <a  target="_blank" href='https://opensource.org/licenses/MIT'>
+                <img src='https://img.shields.io/badge/License-MIT-gray.svg?colorA=2D2A56&colorB=7A76C2&style=flat' width='100' />
+            </a>
+    </td>
+    </tr>
+   
 </table>
 
 - [The Littlest JupyterHub deploy to Azure button](#the-littlest-jupyterhub-deploy-to-azure-button)
-  - [Prerequisites](#prerequisites)
+  - [📝 Prerequisites](#%f0%9f%93%9d-prerequisites)
   - [:thinking: What is the Littlest JupyterHub?](#thinking-what-is-the-littlest-jupyterhub)
-  - [What is in this repo?](#what-is-in-this-repo)
+  - [🔍 What is in this repo?](#%f0%9f%94%8d-what-is-in-this-repo)
   - [💻 How does the Deploy on Azure button work?](#%f0%9f%92%bb-how-does-the-deploy-on-azure-button-work)
   - [🚧 Architecture](#%f0%9f%9a%a7-architecture)
   - [:book: Additional resources](#book-additional-resources)
-  - [Issues and contributing](#issues-and-contributing)
+  - [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
 
-## Prerequisites
+## 📝 Prerequisites
 You need an Azure account to be able to spin your JupyterHub. 
 
 :star: You can get a free account with 150 USD worth of credit following 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard) 👈🏼
@@ -36,7 +46,7 @@ You need an Azure account to be able to spin your JupyterHub.
 A simple JupyterHub distribution for a small (1-100) number of users on a single server. You can find more info about it in the official docs 👉🏼 [here][TLJH-docs].
 
 
-## What is in this repo?
+## 🔍 What is in this repo?
 
 This repository contains the ARM (Azure Resource Manager) template for the Littlest JupyterHub deployment. This template was created to help you deploy a vanilla Littlest JupyterHub by clicking on the deploy to Azure blue button at the top of this document.
 
@@ -126,7 +136,7 @@ Here are some links that you might find useful when using the contents in this r
 :book: [Azure VMs disks documentation](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)
 
 
-## Issues and contributing
+## 🖖🏼 Issues and contributing
 
 Contributions are welcome. Also, if you encounter any issues, please go ahead and create an issue in this repo.
 
