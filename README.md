@@ -34,7 +34,7 @@
 
 ## 📝 Prerequisites
 
-You need an Azure account to be able to spin your JupyterHub. 
+You need an Azure account to be able to spin your JupyterHub.
 
 :star: You can get a free account with 150 USD worth of credit following 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard) 👈🏼
 

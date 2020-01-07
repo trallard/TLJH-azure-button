@@ -142,7 +142,7 @@
         "dataDiskResourcesName": "[concat(variables('vmName'), '-datadisk1')]",
         "managedDiskRef": "[resourceId('Microsoft.Compute/disks', variables('dataDiskResourcesName'))]",
         "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'jupytersa')]",
-        "cloudInit": "[concat('#cloud-config\n\nruncmd:\n- curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin ', parameters('adminUsername'), parameters('extra-parameters'))]"
+        "cloudInit": "[concat('#cloud-config\n\nruncmd:\n- curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin ', parameters('adminUsername'), ' ', parameters('extra-parameters'))]"
 
     },
     "resources": [
@@ -300,6 +300,10 @@
         "adminUsername": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
+        },
+        "cloudInit": {
+            "type": "string",
+            "value": "[variables('cloudInit')]"
         }
     }
 }
