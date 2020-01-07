@@ -1,10 +1,10 @@
 # The Littlest JupyterHub deploy to Azure button
 
-<table width='100%' align="center">
+<table>
     <tr>
     <td align='center' width='100%'>
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Ffeature-plugins%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
+    <img src="http://azuredeploy.net/deploybutton.png" alt="Deploy to azure button"/>
     </a>
     </br>
     </br>
@@ -13,12 +13,11 @@
     </tr>
     <tr>
     <td align='center' width='100%'>
-    This project is licensed under the MIT OSI license.
-    <br>
+    This project is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank"> MIT OSI license. </a>
     <br>
     <a  target="_blank" href='https://opensource.org/licenses/MIT'>
-                <img src='https://img.shields.io/badge/License-MIT-gray.svg?colorA=2D2A56&colorB=7A76C2&style=flat' width='100' />
-            </a>
+        <img src='https://img.shields.io/badge/License-MIT-gray.svg?colorA=2D2A56&colorB=7A76C2&style=flat' width='100' alt="MIT license badge"/>
+    </a>
     </td>
     </tr>
 </table>
@@ -36,11 +35,11 @@
 
 You need an Azure account to be able to spin your JupyterHub.
 
-:star: You can get a free account with 150 USD worth of credit following 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard) 👈🏼
+:star: If you do not have an Azure subscription you can get started with a [free Azure subscription with 150 USD](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard)
 
 ## :thinking: What is the Littlest JupyterHub?
 
-A simple JupyterHub distribution for a small (1-100) number of users on a single server. You can find more info about it in the official docs 👉🏼 [here][TLJH-docs].
+A simple JupyterHub distribution for a small (1-100) number of users on a single server. You can find more info about it in the [official docs][TLJH-docs].
 
 ## 🔍 What is in this repo?
 
@@ -135,7 +134,7 @@ Here are some links that you might find useful when using the contents in this r
 
 Contributions are welcome. Also, if you encounter any issues, please go ahead and create an issue in this repo.
 
-The detailed contribution guidelines can be found 👉🏼 [here](./CONTRIBUTING.md), make sure to have a look first :eyes:
+The detailed contribution guidelines can be found at [CONTRIBUTING](./CONTRIBUTING.md), make sure to have a look first :eyes:
 
 <!-- Links -->
 
