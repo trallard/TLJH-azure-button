@@ -1,5 +1,5 @@
 {
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
@@ -26,6 +26,13 @@
             "type": "string",
             "metadata": {
                 "description": "User name for the Virtual Machine."
+            }
+        },
+        "extra-parameters": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Additional customization parameters e.g --plugin git+https://github.com/yuvipanda/tljh-pangeo@v0.1"
             }
         },
         "adminPassword": {
@@ -135,7 +142,8 @@
         "dataDiskResourcesName": "[concat(variables('vmName'), '-datadisk1')]",
         "managedDiskRef": "[resourceId('Microsoft.Compute/disks', variables('dataDiskResourcesName'))]",
         "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'jupytersa')]",
-        "cloudInit": "[concat('#cloud-config\n\nruncmd:\n- curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin ', parameters('adminUsername'))]"
+        "cloudInit": "[concat('#cloud-config\n\nruncmd:\n- curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin ', parameters('adminUsername'), parameters('extra-parameters'))]"
+
     },
     "resources": [
         {

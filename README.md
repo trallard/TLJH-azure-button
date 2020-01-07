@@ -1,17 +1,14 @@
-
-
-
-
 # The Littlest JupyterHub deploy to Azure button
+
 <table width='100%' align="center">
     <tr>
     <td align='center' width='100%'>
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Ffeature-plugins%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
     </a>
     </br>
     </br>
-    Deploy your own Littlest JupyterHub using the blue button above 👆🏼. 
+    Deploy your own Littlest JupyterHub using the blue button above 👆🏼.
     </td>
     </tr>
     <tr>
@@ -24,7 +21,6 @@
             </a>
     </td>
     </tr>
-   
 </table>
 
 - [The Littlest JupyterHub deploy to Azure button](#the-littlest-jupyterhub-deploy-to-azure-button)
@@ -37,14 +33,14 @@
   - [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
 
 ## 📝 Prerequisites
+
 You need an Azure account to be able to spin your JupyterHub. 
 
 :star: You can get a free account with 150 USD worth of credit following 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard) 👈🏼
 
-
 ## :thinking: What is the Littlest JupyterHub?
-A simple JupyterHub distribution for a small (1-100) number of users on a single server. You can find more info about it in the official docs 👉🏼 [here][TLJH-docs].
 
+A simple JupyterHub distribution for a small (1-100) number of users on a single server. You can find more info about it in the official docs 👉🏼 [here][TLJH-docs].
 
 ## 🔍 What is in this repo?
 
@@ -134,7 +130,6 @@ Here are some links that you might find useful when using the contents in this r
 :book: [Azure VM sizes documentation](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=TLJHbutton-github-taallard)
 
 :book: [Azure VMs disks documentation](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)
-
 
 ## 🖖🏼 Issues and contributing
 
