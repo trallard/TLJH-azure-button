@@ -16,11 +16,30 @@
                 "description": "Virtual machine name. Use a meaningful name."
             }
         },
+        // "virtualMachineSize": {
+        //     "type": "string",
+        //     "defaultValue": "Standard_D2s_v3",
+        //     "metadata": {
+        //         "description": "The virtual machine size. Enter a Premium capable VM size if DiskType is entered as Premium_LRS. Check https://docs.microsoft.com/rest/api/compute/virtualmachinesizes/list for reference."
+        //     }
+        // },
         "virtualMachineSize": {
             "type": "string",
-            "defaultValue": "Standard_D2s_v3",
+            "defaultValue": "CPU-112GB",
+            "allowedValues": [
+                "CPU-8GB",
+                "CPU-14GB",
+                "CPU-16GB",
+                "CPU-28GB",
+                "CPU-32GB",
+                "CPU-64GB",
+                "CPU-112GB",
+                "CPU-128GB",
+                "CPU-256Gb",
+                "CPU-432Gb"
+            ],
             "metadata": {
-                "description": "The virtual machine size. Enter a Premium capable VM size if DiskType is entered as Premium_LRS. Check https://docs.microsoft.com/rest/api/compute/virtualmachinesizes/list for reference."
+                "description": "Choose between CPU or GPU processing"
             }
         },
         "adminUsername": {
@@ -110,16 +129,27 @@
         "virtualNetworkName": "jupyter-VNET",
         "addressPrefix": "10.0.0.0/16",
         "vmName": "[parameters('virtualMachineName')]",
-        "vmSize": "[parameters('virtualMachineSize')]",
+        // "vmSize": "[parameters('virtualMachineSize')]",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
         "vnetId": "[resourceId(resourceGroup().name, 'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
         "nicName": "jupyter-VMNic",
         "dataDiskResourcesName": "[concat(variables('vmName'), '-datadisk1')]",
         "managedDiskRef": "[resourceId('Microsoft.Compute/disks', variables('dataDiskResourcesName'))]",
-        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'jupyter-storage')]",
-        "cloudInit": "[concat('#cloud-config\n\nruncmd:\n- curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin ', parameters('adminUsername'), ' ', parameters('extraParameters'))]"
-
+        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'jupyter')]",
+        "cloudInit": "[concat('#cloud-config\n\nruncmd:\n- curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin ', parameters('adminUsername'), ' ', parameters('extraParameters'))]",
+        "vmSize": {
+            "CPU-8GB": "Standard_F4s_v2",
+            "CPU-14GB": "Standard_DS3_v2",
+            "CPU-16GB": "Standard_D4s_v3",
+            "CPU-28GB": "Standard_DS4_v2",
+            "CPU-32GB": "Standard_F4s_v2",
+            "CPU-64GB": "Standard_D16s_v3",
+            "CPU-112GB": "Standard_DS14-4_v2",
+            "CPU-128GB": "Standard_E16s_v3",
+            "CPU-256Gb": "Standard_E32_v3",
+            "CPU-432Gb": "Standard E64_v3"
+        }
     },
     "resources": [
         {
@@ -167,7 +197,7 @@
         {
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('networkSecurityGroupName')]",
-            "apiVersion": "2019-02-01",
+            "apiVersion": "2019-06-01",
             "location": "[parameters('location')]",
             "properties": {
                 "securityRules": [
@@ -216,7 +246,7 @@
         {
             "type": "Microsoft.Network/virtualNetworks",
             "name": "[variables('virtualNetworkName')]",
-            "apiVersion": "2019-04-01",
+            "apiVersion": "2019-06-01",
             "location": "[parameters('location')]",
             "properties": {
                 "addressSpace": {
@@ -237,7 +267,7 @@
         {
             "type": "Microsoft.Network/publicIpAddresses",
             "name": "[variables('publicIpAddressName')]",
-            "apiVersion": "2019-02-01",
+            "apiVersion": "2019-06-01",
             "location": "[parameters('location')]",
             "properties": {
                 "publicIpAllocationMethod": "[variables('publicIpAddressType')]"
@@ -274,7 +304,7 @@
             ],
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "[variables('vmSize')]"
+                    "vmSize": "[variables('vmSize')[parameters('virtualMachineSize')]]"
                 },
                 "storageProfile": {
                     "osDisk": {
