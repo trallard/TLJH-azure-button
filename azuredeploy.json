@@ -11,6 +11,7 @@
         },
         "virtualMachineName": {
             "type": "string",
+            "defaultValue": "TLJH-Ubuntu",
             "metadata": {
                 "description": "Virtual machine name. Use a meaningful name."
             }
@@ -25,7 +26,7 @@
         "adminUsername": {
             "type": "string",
             "metadata": {
-                "description": "User name for the Virtual Machine."
+                "description": "Username for your admin user."
             }
         },
         "extraParameters": {
@@ -72,57 +73,32 @@
         },
         "dataDiskSize": {
             "type": "string",
-            "defaultValue": "1024",
             "metadata": {
-                "description": "Data disk size."
-            }
-        },
-        "networkSecurityGroupRules": {
-            "type": "array",
-            "metadata": {
-                "description": "Allows http and https by default."
+                "description": "Data disk size - this is attached to your VM for storage."
             },
-            "defaultValue": [
-                {
-                    "name": "HTTP",
-                    "properties": {
-                        "priority": 300,
-                        "protocol": "TCP",
-                        "access": "Allow",
-                        "direction": "Inbound",
-                        "sourceAddressPrefix": "*",
-                        "sourcePortRange": "*",
-                        "destinationAddressPrefix": "*",
-                        "destinationPortRange": "80"
-                    }
-                },
-                {
-                    "name": "HTTPS",
-                    "properties": {
-                        "priority": 320,
-                        "protocol": "TCP",
-                        "access": "Allow",
-                        "direction": "Inbound",
-                        "sourceAddressPrefix": "*",
-                        "sourcePortRange": "*",
-                        "destinationAddressPrefix": "*",
-                        "destinationPortRange": "443"
-                    }
-                },
-                {
-                    "name": "SSH",
-                    "properties": {
-                        "priority": 340,
-                        "protocol": "TCP",
-                        "access": "Allow",
-                        "direction": "Inbound",
-                        "sourceAddressPrefix": "*",
-                        "sourcePortRange": "*",
-                        "destinationAddressPrefix": "*",
-                        "destinationPortRange": "22"
-                    }
-                }
+            "defaultValue": "1024",
+            "allowedValues": [
+                "1024",
+                "2048",
+                "4096",
+                "8192",
+                "16384",
+                "32767"
             ]
+        },
+        "_artifactsLocation": {
+            "type": "string",
+            "metadata": {
+                "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
+            },
+            "defaultValue": ""
+        },
+        "_artifactsLocationSasToken": {
+            "type": "securestring",
+            "metadata": {
+                "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
+            },
+            "defaultValue": ""
         }
     },
     "variables": {
@@ -141,7 +117,7 @@
         "nicName": "jupyter-VMNic",
         "dataDiskResourcesName": "[concat(variables('vmName'), '-datadisk1')]",
         "managedDiskRef": "[resourceId('Microsoft.Compute/disks', variables('dataDiskResourcesName'))]",
-        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'jupytersa')]",
+        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'jupyter-storage')]",
         "cloudInit": "[concat('#cloud-config\n\nruncmd:\n- curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin ', parameters('adminUsername'), ' ', parameters('extraParameters'))]"
 
     },
@@ -159,8 +135,8 @@
             }
         },
         {
-            "name": "[variables('nicName')]",
             "type": "Microsoft.Network/networkInterfaces",
+            "name": "[variables('nicName')]",
             "apiVersion": "2019-07-01",
             "location": "[parameters('location')]",
             "dependsOn": [
@@ -189,17 +165,57 @@
             }
         },
         {
-            "name": "[variables('networkSecurityGroupName')]",
             "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('networkSecurityGroupName')]",
             "apiVersion": "2019-02-01",
             "location": "[parameters('location')]",
             "properties": {
-                "securityRules": "[parameters('networkSecurityGroupRules')]"
+                "securityRules": [
+                    {
+                        "name": "HTTP",
+                        "properties": {
+                            "priority": 300,
+                            "protocol": "TCP",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "80"
+                        }
+                    },
+                    {
+                        "name": "HTTPS",
+                        "properties": {
+                            "priority": 310,
+                            "protocol": "TCP",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "443"
+                        }
+                    },
+                    {
+                        "name": "SSH",
+                        "properties": {
+                            "priority": 340,
+                            "protocol": "TCP",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "22"
+                        }
+                    }
+                ]
             }
         },
         {
-            "name": "[variables('virtualNetworkName')]",
             "type": "Microsoft.Network/virtualNetworks",
+            "name": "[variables('virtualNetworkName')]",
             "apiVersion": "2019-04-01",
             "location": "[parameters('location')]",
             "properties": {
@@ -219,20 +235,21 @@
             }
         },
         {
-            "name": "[variables('publicIpAddressName')]",
             "type": "Microsoft.Network/publicIpAddresses",
+            "name": "[variables('publicIpAddressName')]",
             "apiVersion": "2019-02-01",
             "location": "[parameters('location')]",
             "properties": {
                 "publicIpAllocationMethod": "[variables('publicIpAddressType')]"
             },
             "sku": {
-                "name": "[parameters('publicIpAddressSku')]"
+                "name": "[parameters('publicIpAddressSku')]",
+                "tier": "Regional"
             }
         },
         {
-            "name": "[variables('dataDiskResourcesName')]",
             "type": "Microsoft.Compute/disks",
+            "name": "[variables('dataDiskResourcesName')]",
             "apiVersion": "2018-06-01",
             "location": "[parameters('location')]",
             "sku": {
@@ -246,8 +263,8 @@
             }
         },
         {
-            "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachineName')]",
             "apiVersion": "2019-03-01",
             "location": "[parameters('location')]",
             "dependsOn": [

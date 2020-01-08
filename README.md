@@ -1,11 +1,11 @@
 # The Littlest JupyterHub deploy to Azure button
 
-![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) :sparkles: :sparkles: Now you can install plugins and customise your JupyterHub deployment as per the [instructions in the main TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html) :sparkles::sparkles:
+![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) :sparkles::sparkles: Now you can install plugins and customise your JupyterHub deployment as per the [instructions in the main TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html) :sparkles::sparkles:
 
 <table>
  <tr>
  <td align='center' width='100%'>
- <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
+ <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Ffeature-plugins%2Fazuredeploy.json" target="_blank">
  <img src="http://azuredeploy.net/deploybutton.png" alt="Deploy to azure button"/>
  </a>
  </br>
@@ -38,7 +38,7 @@
 
 You need an Azure account to be able to spin your JupyterHub.
 
-:star: If you do not have an Azure subscription you can get started with a [free Azure subscription with 150 USD](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard)
+:star: If you do not have an Azure subscription you can get started with a [free Azure subscription with 200 USD](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard)
 
 ## :thinking: What is the Littlest JupyterHub?
 
