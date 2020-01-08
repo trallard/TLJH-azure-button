@@ -5,7 +5,7 @@
 <table>
  <tr>
  <td align='center' width='100%'>
- <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Ffeature-plugins%2Fazuredeploy.json" target="_blank">
+ <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
  <img src="http://azuredeploy.net/deploybutton.png" alt="Deploy to azure button"/>
  </a>
  </br>
