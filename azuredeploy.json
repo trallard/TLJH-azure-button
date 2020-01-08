@@ -16,13 +16,6 @@
                 "description": "Virtual machine name. Use a meaningful name."
             }
         },
-        // "virtualMachineSize": {
-        //     "type": "string",
-        //     "defaultValue": "Standard_D2s_v3",
-        //     "metadata": {
-        //         "description": "The virtual machine size. Enter a Premium capable VM size if DiskType is entered as Premium_LRS. Check https://docs.microsoft.com/rest/api/compute/virtualmachinesizes/list for reference."
-        //     }
-        // },
         "virtualMachineSize": {
             "type": "string",
             "defaultValue": "CPU-112GB",
@@ -129,7 +122,6 @@
         "virtualNetworkName": "jupyter-VNET",
         "addressPrefix": "10.0.0.0/16",
         "vmName": "[parameters('virtualMachineName')]",
-        // "vmSize": "[parameters('virtualMachineSize')]",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
         "vnetId": "[resourceId(resourceGroup().name, 'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
