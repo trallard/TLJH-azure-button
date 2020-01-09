@@ -41,13 +41,6 @@
                 "description": "Username for your admin user."
             }
         },
-        "extraParameters": {
-            "type": "string",
-            "defaultValue": "",
-            "metadata": {
-                "description": "Additional customization parameters e.g --plugin git+https://github.com/yuvipanda/tljh-pangeo@v0.1"
-            }
-        },
         "adminPassword": {
             "type": "secureString",
             "metadata": {
@@ -122,7 +115,6 @@
         "dataDiskResourcesName": "[concat(variables('vmName'), '-datadisk1')]",
         "managedDiskRef": "[resourceId('Microsoft.Compute/disks', variables('dataDiskResourcesName'))]",
         "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'jupyter')]",
-        "cloudInit": "[concat('#cloud-config\n\nruncmd:\n- curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py | sudo python3 - --admin ', parameters('adminUsername'), ' ', parameters('extraParameters'))]",
         "vmSize": {
             "CPU-8GB": "Standard_F4s_v2",
             "CPU-14GB": "Standard_DS3_v2",
@@ -322,8 +314,7 @@
                 "osProfile": {
                     "computerName": "[variables('vmName')]",
                     "adminUsername": "[parameters('adminUsername')]",
-                    "adminPassword": "[parameters('adminPassword')]",
-                    "customData": "[base64(variables('cloudInit'))]"
+                    "adminPassword": "[parameters('adminPassword')]"
                 }
             },
             "resources": [
