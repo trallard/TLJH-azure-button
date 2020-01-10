@@ -338,10 +338,8 @@
                         "typeHandlerVersion": "2.0",
                         "autoUpgradeMinorVersion": true,
                         "protectedSettings": {
-                            "commandToExecute": "[concat('bash install.sh ', parameters('adminUsername'))]",
-                            "fileUris": [
-                                "[uri(parameters('scriptLocation'), concat('scripts/install.sh'))]"
-                            ]
+                            "commandToExecute": "[concat('basename ', parameters('scriptLocation'), '| xargs -I % bash \"%\" ', parameters('adminUsername'))]",
+                            "fileUris": "[parameters('scriptLocation')]"
                         }
                     }
                 }
