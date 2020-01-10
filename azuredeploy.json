@@ -32,7 +32,7 @@
                 "CPU-432Gb"
             ],
             "metadata": {
-                "description": "Choose between CPU or GPU processing"
+                "description": "Your vm size see https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general"
             }
         },
         "adminUsername": {
