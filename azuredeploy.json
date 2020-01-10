@@ -18,7 +18,7 @@
         },
         "virtualMachineSize": {
             "type": "string",
-            "defaultValue": "CPU-112GB",
+            "defaultValue": "CPU-64GB",
             "allowedValues": [
                 "CPU-8GB",
                 "CPU-14GB",
