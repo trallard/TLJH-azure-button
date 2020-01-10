@@ -327,7 +327,7 @@
                     "name": "[concat(variables('vmName'),'/installscript')]",
                     "location": "[parameters('location')]",
                     "dependsOn": [
-                        "[concat('Microsoft.Compute/virtualMachines/', concat(variables('vmName'),copyindex()))]"
+                        "[concat('Microsoft.Compute/virtualMachines/', concat(variables('vmName')))]"
                     ],
                     "tags": {
                         "displayName": "Execute Jupyter install script"
