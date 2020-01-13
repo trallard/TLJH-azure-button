@@ -1,8 +1,10 @@
 <div align="center">
 <h1> The Littlest JupyterHub deploy to Azure button </h1>
+</div>
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) :sparkles::sparkles: Now you can install plugins and customise your JupyterHub deployment as per the [instructions in the main TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html) :sparkles::sparkles:
-</div>
+
+![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) Now the VM size selector is a dropdown based on the VM Memory Size
 
 <table style="width:auto; margin-left:auto; margin-right:auto;">
  <tr>
@@ -33,7 +35,7 @@
 - [✨ Customising the installer](#%e2%9c%a8-customising-the-installer)
 - [🚧 Architecture](#%f0%9f%9a%a7-architecture)
 - [:book: Additional resources](#book-additional-resources)
-- [:glasses: Useful tips and commands](#glasses-useful-tips-and-commands)
+- [:clap: Useful tips and commands](#clap-useful-tips-and-commands)
 - [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
 
 ## 📝 Prerequisites
@@ -58,43 +60,43 @@ The ARM template contains all the necessary configuration needed to deploy your 
 
 This template follows the configuration detailed in [https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html). But it reduces some of the friction by eliminating the need to create resources manually using the Azure portal.
 
-🚨 Note that you still need to remove your resources manually when you are done using them.
+🚨 Note that you still need to remove your resources manually when you are done using them. Otherwise you will be charged for their use.
 
 🚧 To deploy your TLJH follow these steps:
 
 1. Create an Azure account (if you need a free one go to 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard) 👈🏼)
-2. Click on the `Deploy to Azure` button at the top of the Readme. This will redirect you to the Azure portal login page.
+2. Click on the `Deploy to Azure` button at the top of the this Readme. This will redirect you to the Azure portal login page.
 3. Login to your account.
-4. Fill in the details in the next screen:
+4. Fill in the details in the next screen: (see details below)
 
 ![custom template](assets/Custom_deployment_-_Microsoft_Azure.png)
 
 - **Subscription**: choose the subscription you want to use (e.g. Free Trial)
 - **Resource group**: this will keep all of our resources together. If you have never created a resource group click on `Create new` and give it a meaningful name (e.g. jupyter-resources)
 - **Location**: this is the Azure region where you want all your resources to be (e.g. WestEurope, you can check all the available regions [here](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines&WT.mc_id=TLJHbutton-github-taallard))
-- **Virtual Machine Name**: the name for your virtual machine
-- **Virtual Machine Size**: the workload will determine this. You can check the list of available VM sizes [here](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=TLJHbutton-github-taallard)
+- **Virtual Machine Name**: the name for your virtual machine. The deault is TLHJ-Ubuntu but you can choose any name you prefer.
+- **Virtual Machine Size**: the workload will determine this. You can check the list of available VM sizes [here](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=TLJHbutton-github-taallard). This is a dropdown from version 1.1.0 onwards
 - **Admin UserName**: this will be the root user and is needed for the management of your TLJH
-- **Admin password**: choose a secure password for your root user
-- **OS Disk Type**: you have the options Standard HDD (LRS), Standard SSD and Premium SSD (for more details see [the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard))
+- **Admin password**: choose a secure password for your root user. Note that this is not displayed later on in the outputs for security reasons so make sure to make note of it.
+- **OS Disk Type**: you have the options Standard HDD (LRS), Standard SSD and Premium SSD (for more details see [the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)). The default value is `Standard_LRS`.
 - **Data Disk Size**: the size of your Data disk size (for more information [visit the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard))
-- **Extra parameters**: additional parameters needed if you want to customise the installer (i.e. adding plugins or installing packages in the user environment). For more details, visit TLJH [documentation on customising the installer](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html). If you are not looking to customise anything leave this blank.
+- **Script Location**: This is the script that installs the Jupyter server in your VM. By default it points to the script in this repository. Read more in the [customising the installer section](#%e2%9c%a8-customising-the-installer) of this Readme.
 
-By default, the template allows network traffic through `HTTP` and `https`, do not modify the `network and security group rules`.
+By default, the template allows network traffic through `HTTP` and `https`.
 
 5. Once completed, read the terms and conditions and if you are happy with them, go ahead and tick the `I agree to the terms and conditions stated above` box and click on the **Purchase button**.
 
-The deployment will take around 10 minutes - first, all your resources will be deployed, and then THLJ will be installed on your VM.
+   The deployment will take around 10 minutes - first, all your resources will be deployed, and then THLJ will be installed on your VM. 
 
 6. To check your new Virtual Machine Expand the left-hand panel by clicking on the “>>” button on the top left corner of your dashboard. Find the Virtual Machines tab and click on it.
 
 ![azure portal vm](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/azure-vms.png)
 
-7. Click on your Virtual Machine, copy the **Public IP address** and access it on the web browser.
+7. Click on your Virtual Machine, copy the **Public IP address**  and access it through your web browser.
 
 ![ip](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/ip-vm.png)
 
-🚨 Note this page will be unavailable during installation. If this happens, give it a bit longer and refresh the page.
+🚨 Note this page will be unavailable during installation of the server. If this happens, be patient, give it a bit longer and refresh the page.
 
 Once the installation is complete, you will get a login page like the one below:
 
@@ -109,7 +111,7 @@ Once the installation is complete, you will get a login page like the one below:
 
 ## ✨ Customising the installer
 
-You can customise the installer by adding command line parameters. From v1.1.0 you can now specify a TLJH install script to customise the install. 
+You can customise the installer by adding command line parameters. From v1.1.0 you can now specify a TLJH install script to customise the install.
 
 For example, if you want to install Python packages in the user environment from a `requirements.txt` file you can pass the parameter `--user-requirements-txt-URL <url-to-requirements.txt>` where `URL-to-requirements.txt` must be a valid URL:
 
@@ -128,6 +130,26 @@ Similarly, if you wanted, for example, to install the [PANGEO stack](https://git
 ```
 
 For more details, visit the [official TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html).
+
+For example, you can create a new `install.sh` script where you pass the additional parameters:
+
+```sh
+# !/bin/bash	
+
+# install JupyterHub - keep these two lines as they are
+curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py \
+| sudo python3 - --admin ${1} \
+#  customise your installer - e.g. install PANGEO plugin
+--plugin git+https://github.com/yuvipanda/tljh-pangeo@v0.1 
+```
+
+And update the `scriptLocation` parameter accordingly. For the above example:
+```
+https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/scripts/install.sh
+```
+
+Again make sure that the script is publicly available (e.g. public repo, public gist) and that you are pointing to the `raw` content.
+
 
 ## 🚧 Architecture
 When you deploy a JupyterHub on Azure (either using the Deploy to Azure button or follow the steps from the docs) the following resources are created:
@@ -163,9 +185,11 @@ Here are some links that you might find useful when using the contents in this r
 
 :book: [Azure VMs disks documentation](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)
 
-## :glasses: Useful tips and commands
+:book: [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest?WT.mc_id=TLJHbutton-github-taallard)
 
-If you are4 familiar with the command line you and have the `az cli` installed ther following commands might come handy:
+## :clap: Useful tips and commands
+
+If you are familiar with the command line you and have the `az cli` installed ther following commands might come handy:
 
 - Finding available VM sizes in a specific location
 
