@@ -32,7 +32,7 @@
                 "CPU-432Gb"
             ],
             "metadata": {
-                "description": "Your vm size see https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general"
+                "description": "Your Virtual Machine size see https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general"
             }
         },
         "adminUsername": {
@@ -81,7 +81,7 @@
             "metadata": {
                 "description": "The URL where the install script is located. If you do not require additional plugins or custom installs leave the default"
             },
-            "defaultValue": "https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/scripts/install.sh"
+            "defaultValue": "https://raw.githubusercontent.com/trallard/TLJH-azure-button/master/scripts/install.sh"
         },
         "dataDiskSize": {
             "type": "string",
