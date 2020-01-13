@@ -1,8 +1,10 @@
-# The Littlest JupyterHub deploy to Azure button
+<div align="center">
+<h1> The Littlest JupyterHub deploy to Azure button </h1>
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) :sparkles::sparkles: Now you can install plugins and customise your JupyterHub deployment as per the [instructions in the main TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html) :sparkles::sparkles:
+</div>
 
-<table>
+<table style="width:auto; margin-left:auto; margin-right:auto;">
  <tr>
  <td align='center' width='100%'>
  <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Ffeature-plugins%2Fazuredeploy.json" target="_blank">
@@ -10,7 +12,7 @@
  </a>
  </br>
  </br>
- Deploy your own Littlest JupyterHub using the blue button above 👆🏼.
+ Deploy your own Littlest JupyterHub using the blue button above 👆🏼
  </td>
  </tr>
  <tr>
@@ -24,15 +26,14 @@
  </tr>
 </table>
 
-- [The Littlest JupyterHub deploy to Azure button](#the-littlest-jupyterhub-deploy-to-azure-button)
-  - [📝 Prerequisites](#%f0%9f%93%9d-prerequisites)
-  - [:thinking: What is the Littlest JupyterHub?](#thinking-what-is-the-littlest-jupyterhub)
-  - [🔍 What is in this repo?](#%f0%9f%94%8d-what-is-in-this-repo)
-  - [💻 How does the Deploy on Azure button work?](#%f0%9f%92%bb-how-does-the-deploy-on-azure-button-work)
-  - [✨ Customising the installer](#%e2%9c%a8-customising-the-installer)
-  - [🚧 Architecture](#%f0%9f%9a%a7-architecture)
-  - [:book: Additional resources](#book-additional-resources)
-  - [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
+- [📝 Prerequisites](#%f0%9f%93%9d-prerequisites)
+- [:thinking: What is the Littlest JupyterHub?](#thinking-what-is-the-littlest-jupyterhub)
+- [🔍 What is in this repo?](#%f0%9f%94%8d-what-is-in-this-repo)
+- [💻 How does the Deploy on Azure button work?](#%f0%9f%92%bb-how-does-the-deploy-on-azure-button-work)
+- [✨ Customising the installer](#%e2%9c%a8-customising-the-installer)
+- [🚧 Architecture](#%f0%9f%9a%a7-architecture)
+- [:book: Additional resources](#book-additional-resources)
+- [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
 
 ## 📝 Prerequisites
 
@@ -103,11 +104,11 @@ Once the installation is complete, you will get a login page like the one below:
 8. Login using the **admin username and password** you created before
 9. Congratulations you have a running working JupyterHub 🎉
 
-👩🏿‍💻✨ You are now ready to add users, install packages and start using your JupyterHub. For instructions on how to do this visit 👉🏼 [the official documentation](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html#step-2-adding-more-users)\
+👩🏿‍💻✨ You are now ready to add users, install packages and start using your JupyterHub. For instructions on how to do this visit 👉🏼 [the official documentation](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html#step-2-adding-more-users).
 
 ## ✨ Customising the installer
 
-You can customise the installer by adding command line parameters. From v1.1.0 you can now add these parameters in the **Extra Parameters** section of the ARM template.
+You can customise the installer by adding command line parameters. From v1.1.0 you can now specify a TLJH install script to customise the install. 
 
 For example, if you want to install Python packages in the user environment from a `requirements.txt` file you can pass the parameter `--user-requirements-txt-URL <url-to-requirements.txt>` where `URL-to-requirements.txt` must be a valid URL:
 
