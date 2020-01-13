@@ -79,9 +79,9 @@
         "scriptLocation": {
             "type": "string",
             "metadata": {
-                "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
+                "description": "The URL where the install script is located. If you do not require additional plugins or custom installs leave the default"
             },
-            "defaultValue": "https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/"
+            "defaultValue": "https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/scripts/install.sh"
         },
         "dataDiskSize": {
             "type": "string",
