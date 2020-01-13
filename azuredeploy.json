@@ -338,7 +338,7 @@
                         "typeHandlerVersion": "2.0",
                         "autoUpgradeMinorVersion": true,
                         "protectedSettings": {
-                            "commandToExecute": "[concat('basename ', parameters('scriptLocation'), '| xargs -I % bash \"%\" ', parameters('adminUsername'))]",
+                            "commandToExecute": "[concat('basename ', parameters('scriptLocation'), ' | xargs -I % bash \"%\" ', parameters('adminUsername'))]",
                             "fileUris": [
                                 "[parameters('scriptLocation')]"
                             ]
