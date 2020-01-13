@@ -33,6 +33,7 @@
 - [✨ Customising the installer](#%e2%9c%a8-customising-the-installer)
 - [🚧 Architecture](#%f0%9f%9a%a7-architecture)
 - [:book: Additional resources](#book-additional-resources)
+- [:glasses: Useful tips and commands](#glasses-useful-tips-and-commands)
 - [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
 
 ## 📝 Prerequisites
@@ -161,6 +162,44 @@ Here are some links that you might find useful when using the contents in this r
 :book: [Azure VM sizes documentation](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=TLJHbutton-github-taallard)
 
 :book: [Azure VMs disks documentation](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)
+
+## :glasses: Useful tips and commands
+
+If you are4 familiar with the command line you and have the `az cli` installed ther following commands might come handy:
+
+- Finding available VM sizes in a specific location
+
+```sh
+az vm list-sizes --location <location> --output table
+```
+
+- View the current size of a VM with:
+
+```sh
+az vm show --resource-group <resource-group> --name <VirtualMachineName> --query hardwareProfile.vmSize
+```
+
+- You can resize your VM after it has been deployed if needed
+
+```sh
+# First check if the desired size is available 
+az vm list-vm-resize-options --resource-group <resource-group> --name  <VirtualMachineName> --query [].name
+
+# resize the VM
+az vm resize --resource-group <resource-group> --name  <VirtualMachineName> --size <desired-size>
+```
+
+- Stop virtual machine
+
+```sh
+az vm stop --resource-group <resource-group> --name  <VirtualMachineName>
+```
+
+- Delete resource group
+
+```sh
+az group delete --name <resource-group> --no-wait --yes
+```
 
 ## 🖖🏼 Issues and contributing
 
