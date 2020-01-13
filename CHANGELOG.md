@@ -4,10 +4,14 @@ All notable changes to the project will be documented in this file.
 
 ## RELEASE: 1.0.1
 ![FIX](https://img.shields.io/badge/-FIX-gray.svg?colorB=FC427B)
+> 📦 VM Size is now a dropdown [`32acf74`](https://github.com/trallard/TLJH-azure-button/commit/32acf74a892e0d5eed70177cfb712d31f7f9fe58)
 
-> 📦 Add support for plugins and other customisations [`64ab538`](https://github.com/trallard/pitaya_smoothie/commit/64ab5385bbb79f8423dd9099d6ff66ae451c9af4)
+![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4)
 
-> 📖 Add docs on how to install plugins or additional customisation [``]()
+> 📦 Add support for plugins and other customisations [`cddd3a2`](https://github.com/trallard/TLJH-azure-button/commit/cddd3a273f97634ec429c5a8837bf123a6ab71d9)
+
+![DOCS](https://img.shields.io/badge/-DOCS-gray.svg?colorB=686de0)
+> 📖 Add docs on how to install plugins or additional customisation [`057c1ff`](https://github.com/trallard/TLJH-azure-button/commit/057c1ffe5a45dbecf8cc5c946cea4f4a7ef14b67)
 
 ## RELEASE: 1.0.0
 

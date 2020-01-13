@@ -123,33 +123,25 @@ For example, if you want to install Python packages in the user environment from
 
 When pointing to a file on GitHub, make sure to use the ‘Raw’ version. It should point to raw.githubusercontent.com, not github.com.
 
-Similarly, if you wanted, for example, to install the [PANGEO stack](https://github.com/yuvipanda/tljh-pangeo) plugin, you can do it by passing the following parameter:
+Let's use as example the `voilà-gallery plugin`. First you will have to create a bash script with the customised Jupyterhub installer:
 
 ```sh
- --plugin git+https://github.com/yuvipanda/tljh-pangeo@v0.1
-```
+# !/bin/bash
 
-For more details, visit the [official TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html).
-
-For example, you can create a new `install.sh` script where you pass the additional parameters:
-
-```sh
-# !/bin/bash	
-
-# install JupyterHub - keep these two lines as they are
 curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master/bootstrap/bootstrap.py \
-| sudo python3 - --admin ${1} \
-#  customise your installer - e.g. install PANGEO plugin
---plugin git+https://github.com/yuvipanda/tljh-pangeo@v0.1 
+ | sudo python3 - \
+   --plugin git+https://github.com/voila-dashboards/tljh-voila-gallery@master#"egg=tljh-voila-gallery&subdirectory=tljh-voila-gallery"
 ```
 
-And update the `scriptLocation` parameter accordingly. For the above example:
-```
-https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/scripts/install.sh
+and update the `scriptLocation` parameter accordingly when deploying your littles JupyterHub. For the above example:
+
+```sh
+https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/scripts/custom_install.sh
 ```
 
 Again make sure that the script is publicly available (e.g. public repo, public gist) and that you are pointing to the `raw` content.
 
+For more details on customising your installation visit [the main TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html).
 
 ## 🚧 Architecture
 When you deploy a JupyterHub on Azure (either using the Deploy to Azure button or follow the steps from the docs) the following resources are created:
