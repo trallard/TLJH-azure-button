@@ -121,7 +121,7 @@ For example, if you want to install Python packages in the user environment from
 
 ⚠️ **Note**
 
-When pointing to a file on GitHub, make sure to use the ‘Raw’ version. It should point to raw.githubusercontent.com, not github.com.
+When pointing to a file on GitHub, make sure to use the ‘Raw’ version. It should point to `raw.githubusercontent.com`, not `github.com`.
 
 Let's use as example the `voilà-gallery plugin`. First you will have to create a bash script with the customised Jupyterhub installer:
 
@@ -133,7 +133,7 @@ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master
    --plugin git+https://github.com/voila-dashboards/tljh-voila-gallery@master#"egg=tljh-voila-gallery&subdirectory=tljh-voila-gallery"
 ```
 
-and update the `scriptLocation` parameter accordingly when deploying your littles JupyterHub. For the above example:
+and update the `scriptLocation` parameter accordingly when deploying your littlest JupyterHub (in the details form asfter you log into your Azure account). For the above example:
 
 ```sh
 https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/scripts/custom_install.sh
@@ -157,11 +157,15 @@ Details on how to delete and stop your virtual machine can be found at [https://
 
 If you want to get rid of all the associated resources after you are done with your JupyterHub the easiest way to do it is deleting the resource group altogether (providing you do not have other resources in this group that you might need later).
 
-To delete a resource group:
+⚡️ To delete a resource group from the Azure portal:
 
-1. Go to "Resource groups” on the left-hand panel of your Azure Portal.
+1. Go to **Resource groups** on the left-hand panel of your Azure Portal.
 2. Click on the resource group that contains your JupyterHub resources.
-3. Click on “Delete resource group” you will then be asked to confirm the operation. This operation will take between 5 and 10 minutes.
+3. Click on **Delete resource group** you will then be asked to confirm the operation. This operation will take between 5 and 10 minutes.
+
+![delete group](./assets/deletegroup.gif)
+
+See the [useful tips and commands](#clap-useful-tips-and-commands) section for the command to delete using the command line and the azure cli.
 
 ## :book: Additional resources
 
