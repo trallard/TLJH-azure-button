@@ -28,15 +28,15 @@
  </tr>
 </table>
 
-- [📝 Prerequisites](#%f0%9f%93%9d-prerequisites)
-- [:thinking: What is the Littlest JupyterHub?](#thinking-what-is-the-littlest-jupyterhub)
-- [🔍 What is in this repo?](#%f0%9f%94%8d-what-is-in-this-repo)
-- [💻 How does the Deploy on Azure button work?](#%f0%9f%92%bb-how-does-the-deploy-on-azure-button-work)
-- [✨ Customising the installer](#%e2%9c%a8-customising-the-installer)
-- [🚧 Architecture](#%f0%9f%9a%a7-architecture)
-- [:book: Additional resources](#book-additional-resources)
-- [:clap: Useful tips and commands](#clap-useful-tips-and-commands)
-- [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
+- [📝 Prerequisites](#-prerequisites)
+- [:thinking: What is the Littlest JupyterHub?](#-what-is-the-littlest-jupyterhub)
+- [🔍 What is in this repo?](#-what-is-in-this-repo)
+- [💻 How does the Deploy on Azure button work?](#-how-does-the-deploy-on-azure-button-work)
+- [✨ Customising the installer](#-customising-the-installer)
+- [🚧 Architecture](#-architecture)
+- [:book: Additional resources](#-additional-resources)
+- [:clap: Useful tips and commands](#-useful-tips-and-commands)
+- [🖖🏼 Issues and contributing](#-issues-and-contributing)
 
 ## 📝 Prerequisites
 
@@ -86,7 +86,7 @@ By default, the template allows network traffic through `HTTP` and `https`.
 
 5. Once completed, read the terms and conditions and if you are happy with them, go ahead and tick the `I agree to the terms and conditions stated above` box and click on the **Purchase button**.
 
-   The deployment will take around 10 minutes - first, all your resources will be deployed, and then THLJ will be installed on your VM. 
+   The deployment will take around 10 minutes - first, all your resources will be deployed, and then THLJ will be installed on your VM.
 
 6. To check your new Virtual Machine Expand the left-hand panel by clicking on the “>>” button on the top left corner of your dashboard. Find the Virtual Machines tab and click on it.
 
@@ -202,7 +202,7 @@ az vm show --resource-group <resource-group> --name <VirtualMachineName> --query
 - You can resize your VM after it has been deployed if needed
 
 ```sh
-# First check if the desired size is available 
+# First check if the desired size is available
 az vm list-vm-resize-options --resource-group <resource-group> --name  <VirtualMachineName> --query [].name
 
 # resize the VM
