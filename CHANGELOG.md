@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to the project will be documented in this file.
 
+## RELEASE: 1.0.2
+![FIX](https://img.shields.io/badge/-FIX-gray.svg?colorB=FC427B)
+> 📦 Fix Pangeo custom install script [`d2c0c30`](https://github.com/trallard/TLJH-azure-button/commit/7a72e0d62880677996941011a4dad8ffad2c0c30) - PR by @georgebisbas
+> 📦 Fix PREADME table of contents [`76fda60`](https://github.com/trallard/TLJH-azure-button/commit/d6b562e2637e695443d1d068e1a8d4bb376fda60) - PR by @sgibson91
+> 📦 Fix default install script is vanilla install [`a390667`](https://github.com/trallard/TLJH-azure-button/commit/d7bc35f3f816dd17f48e96625fe58a31fa390667) 
 
 ## RELEASE: 1.0.1
 ![FIX](https://img.shields.io/badge/-FIX-gray.svg?colorB=FC427B)
