@@ -28,15 +28,15 @@
  </tr>
 </table>
 
-- [📝 Prerequisites](#-prerequisites)
-- [:thinking: What is the Littlest JupyterHub?](#-what-is-the-littlest-jupyterhub)
-- [🔍 What is in this repo?](#-what-is-in-this-repo)
-- [💻 How does the Deploy on Azure button work?](#-how-does-the-deploy-on-azure-button-work)
-- [✨ Customising the installer](#-customising-the-installer)
-- [🚧 Architecture](#-architecture)
-- [:book: Additional resources](#-additional-resources)
-- [:clap: Useful tips and commands](#-useful-tips-and-commands)
-- [🖖🏼 Issues and contributing](#-issues-and-contributing)
+- [📝 Prerequisites](#%f0%9f%93%9d-prerequisites)
+- [:thinking: What is the Littlest JupyterHub?](#thinking-what-is-the-littlest-jupyterhub)
+- [🔍 What is in this repo?](#%f0%9f%94%8d-what-is-in-this-repo)
+- [💻 How does the Deploy on Azure button work?](#%f0%9f%92%bb-how-does-the-deploy-on-azure-button-work)
+- [✨ Customising the installer](#%e2%9c%a8-customising-the-installer)
+- [🚧 Architecture](#%f0%9f%9a%a7-architecture)
+- [:book: Additional resources](#book-additional-resources)
+- [:clap: Useful tips and commands](#clap-useful-tips-and-commands)
+- [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
 
 ## 📝 Prerequisites
 
@@ -80,15 +80,15 @@ This template follows the configuration detailed in [https://the-littlest-jupyte
 - **Admin password**: choose a secure password for your root user. Note that this is not displayed later on in the outputs for security reasons so make sure to make note of it.
 - **OS Disk Type**: you have the options Standard HDD (LRS), Standard SSD and Premium SSD (for more details see [the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)). The default value is `Standard_LRS`.
 - **Data Disk Size**: the size of your Data disk size (for more information [visit the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard))
-- **Script Location**: This is the script that installs the Jupyter server in your VM. By default it points to the script in this repository. Read more in the [customising the installer section](#%e2%9c%a8-customising-the-installer) of this Readme.
+- **Script Location**: This is the script that installs the Jupyter server in your VM. By default it points to the script in this repository corresponding to the vanilla install of TLJH ([scripts/install.sh](scripts/install.sh)). Read more in the [customising the installer section](#-customising-the-installer) of this Readme.
 
 By default, the template allows network traffic through `HTTP` and `https`.
 
-5. Once completed, read the terms and conditions and if you are happy with them, go ahead and tick the `I agree to the terms and conditions stated above` box and click on the **Purchase button**.
+1. Once completed, read the terms and conditions and if you are happy with them, go ahead and tick the `I agree to the terms and conditions stated above` box and click on the **Purchase button**.
 
    The deployment will take around 10 minutes - first, all your resources will be deployed, and then THLJ will be installed on your VM.
 
-6. To check your new Virtual Machine Expand the left-hand panel by clicking on the “>>” button on the top left corner of your dashboard. Find the Virtual Machines tab and click on it.
+2. To check your new Virtual Machine Expand the left-hand panel by clicking on the “>>” button on the top left corner of your dashboard. Find the Virtual Machines tab and click on it.
 
 ![azure portal vm](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/azure-vms.png)
 
@@ -136,12 +136,25 @@ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master
 and update the `scriptLocation` parameter accordingly when deploying your littlest JupyterHub (in the details form asfter you log into your Azure account). For the above example:
 
 ```sh
-https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/scripts/custom_install.sh
+https://raw.githubusercontent.com/trallard/TLJH-azure-button/feature-plugins/scripts/install_voila.sh
 ```
 
-Again make sure that the script is publicly available (e.g. public repo, public gist) and that you are pointing to the `raw` content.
+So once the VM is created and the plugins installed you can go to the public IP of your VM. In the case of the Voilà plugin you will be greeted with this screen instead of the usual TLHJ one:
+
+![Voilà screen](./assets/Voila_Gallery.png)
+
+Always make sure that the script is publicly available (e.g. public repo, public gist) and that you are pointing to the `raw` content.
 
 For more details on customising your installation visit [the main TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html).
+
+In this repo you will find the following install scripts:
+
+- Vanilla TLHJ install script: [./scripts/install.sh](./scripts/install.sh)
+  
+- TLJH + Pangeo plugin script: [./scripts/install_pangeo.sh](./scripts/install_pangeo.sh)
+
+- TLJH + Voila dashboard plugin script: [./scripts/install_voila.sh](./scripts/install_voila.sh)
+  
 
 ## 🚧 Architecture
 When you deploy a JupyterHub on Azure (either using the Deploy to Azure button or follow the steps from the docs) the following resources are created:
