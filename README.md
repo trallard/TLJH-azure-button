@@ -2,6 +2,9 @@
 <h1> The Littlest JupyterHub deploy to Azure button </h1>
 </div>
 
+[![GitHub release](https://img.shields.io/github/release/trallard/TLJH-azure-button.svg?colorA=3d3d3d&colorB=22a6b3&style=flat)](https://GitHub.com/trallard/TLJH-azure-button/releases/)
+
+
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) :sparkles::sparkles: Now you can install plugins and customise your JupyterHub deployment as per the [instructions in the main TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html) :sparkles::sparkles:
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) Now the VM size selector is a dropdown based on the VM Memory Size
