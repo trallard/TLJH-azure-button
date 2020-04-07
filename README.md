@@ -4,7 +4,6 @@
 
 [![GitHub release](https://img.shields.io/github/release/trallard/TLJH-azure-button.svg?colorA=3d3d3d&colorB=22a6b3&style=flat)](https://GitHub.com/trallard/TLJH-azure-button/releases/)
 
-
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) :sparkles::sparkles: Now you can install plugins and customise your JupyterHub deployment as per the [instructions in the main TLJH documentation](http://tljh.jupyter.org/en/latest/topic/customizing-installer.html) :sparkles::sparkles:
 
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) Now the VM size selector is a dropdown based on the VM Memory Size
@@ -31,15 +30,15 @@
  </tr>
 </table>
 
-- [📝 Prerequisites](#%f0%9f%93%9d-prerequisites)
-- [:thinking: What is the Littlest JupyterHub?](#thinking-what-is-the-littlest-jupyterhub)
-- [🔍 What is in this repo?](#%f0%9f%94%8d-what-is-in-this-repo)
-- [💻 How does the Deploy on Azure button work?](#%f0%9f%92%bb-how-does-the-deploy-on-azure-button-work)
-- [✨ Customising the installer](#%e2%9c%a8-customising-the-installer)
-- [🚧 Architecture](#%f0%9f%9a%a7-architecture)
+- [📝 Prerequisites](#-prerequisites)
+- [:thinking: What is the Littlest JupyterHub?](#-what-is-the-littlest-jupyterhub)
+- [🔍 What is in this repo?](#-what-is-in-this-repo)
+- [💻 How does the Deploy on Azure button work?](#%-how-does-the-deploy-on-azure-button-work)
+- [✨ Customising the installer](#-customising-the-installer)
+- [🚧 Architecture](#-architecture)
 - [:book: Additional resources](#book-additional-resources)
 - [:clap: Useful tips and commands](#clap-useful-tips-and-commands)
-- [🖖🏼 Issues and contributing](#%f0%9f%96%96%f0%9f%8f%bc-issues-and-contributing)
+- [🖖🏼 Issues and contributing](#-issues-and-contributing)
 
 ## 📝 Prerequisites
 
@@ -87,11 +86,11 @@ This template follows the configuration detailed in [https://the-littlest-jupyte
 
 By default, the template allows network traffic through `HTTP` and `https`.
 
-1. Once completed, read the terms and conditions and if you are happy with them, go ahead and tick the `I agree to the terms and conditions stated above` box and click on the **Purchase button**.
+5. Once completed, read the terms and conditions and if you are happy with them, go ahead and tick the `I agree to the terms and conditions stated above` box and click on the **Purchase button**.
 
    The deployment will take around 10 minutes - first, all your resources will be deployed, and then THLJ will be installed on your VM.
 
-2. To check your new Virtual Machine Expand the left-hand panel by clicking on the “>>” button on the top left corner of your dashboard. Find the Virtual Machines tab and click on it.
+6. To check your new Virtual Machine Expand the left-hand panel by clicking on the ">>" button on the top left corner of your dashboard. Find the Virtual Machines tab and click on it.
 
 ![azure portal vm](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/azure-vms.png)
 
@@ -124,7 +123,7 @@ For example, if you want to install Python packages in the user environment from
 
 ⚠️ **Note**
 
-When pointing to a file on GitHub, make sure to use the ‘Raw’ version. It should point to `raw.githubusercontent.com`, not `github.com`.
+When pointing to a file on GitHub, make sure to use the 'Raw' version. It should point to `raw.githubusercontent.com`, not `github.com`.
 
 Let's use as example the `voilà-gallery plugin`. First you will have to create a bash script with the customised Jupyterhub installer:
 
