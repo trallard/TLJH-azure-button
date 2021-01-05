@@ -11,7 +11,7 @@
 <table style="width:auto; margin-left:auto; margin-right:auto;">
  <tr>
  <td align='center' width='100%'>
- <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
+ <a href="https://portal.azure.com/?WT.mc_id=academic-0000-taallard#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
  <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true"/>
 
  </a>
@@ -45,7 +45,7 @@
 
 You need an Azure account to be able to spin your JupyterHub.
 
-:star: If you do not have an Azure subscription you can get started with a [free Azure subscription with 200 USD](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard)
+:star: If you do not have an Azure subscription you can get started with a [free Azure subscription with 200 USD](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-taallard)
 
 ## :thinking: What is the Littlest JupyterHub?
 
@@ -67,7 +67,7 @@ This template follows the configuration detailed in [https://the-littlest-jupyte
 
 🚧 To deploy your TLJH follow these steps:
 
-1. Create an Azure account (if you need a free one go to 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=TLJHbutton-github-taallard) 👈🏼)
+1. Create an Azure account (if you need a free one go to 👉🏼 [this link](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-taallard) 👈🏼)
 2. Click on the `Deploy to Azure` button at the top of the this Readme. This will redirect you to the Azure portal login page.
 3. Login to your account.
 4. Fill in the details in the next screen: (see details below)
@@ -76,13 +76,13 @@ This template follows the configuration detailed in [https://the-littlest-jupyte
 
 - **Subscription**: choose the subscription you want to use (e.g. Free Trial)
 - **Resource group**: this will keep all of our resources together. If you have never created a resource group click on `Create new` and give it a meaningful name (e.g. jupyter-resources)
-- **Location**: this is the Azure region where you want all your resources to be (e.g. WestEurope, you can check all the available regions [here](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines&WT.mc_id=TLJHbutton-github-taallard))
+- **Location**: this is the Azure region where you want all your resources to be (e.g. WestEurope, you can check all the available regions [here](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines&WT.mc_id=academic-0000-taallard))
 - **Virtual Machine Name**: the name for your virtual machine. The deault is TLHJ-Ubuntu but you can choose any name you prefer.
-- **Virtual Machine Size**: the workload will determine this. You can check the list of available VM sizes [here](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=TLJHbutton-github-taallard). This is a dropdown from version 1.1.0 onwards
+- **Virtual Machine Size**: the workload will determine this. You can check the list of available VM sizes [here](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=academic-0000-taallard). This is a dropdown from version 1.1.0 onwards
 - **Admin UserName**: this will be the root user and is needed for the management of your TLJH
 - **Admin password**: choose a secure password for your root user. Note that this is not displayed later on in the outputs for security reasons so make sure to make note of it.
-- **OS Disk Type**: you have the options Standard HDD (LRS), Standard SSD and Premium SSD (for more details see [the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)). The default value is `Standard_LRS`.
-- **Data Disk Size**: the size of your Data disk size (for more information [visit the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard))
+- **OS Disk Type**: you have the options Standard HDD (LRS), Standard SSD and Premium SSD (for more details see [the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=academic-0000-taallard)). The default value is `Standard_LRS`.
+- **Data Disk Size**: the size of your Data disk size (for more information [visit the docs](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=academic-0000-taallard))
 - **Script Location**: This is the script that installs the Jupyter server in your VM. By default it points to the script in this repository corresponding to the vanilla install of TLJH ([scripts/install.sh](scripts/install.sh)). Read more in the [customising the installer section](#-customising-the-installer) of this Readme.
 
 By default, the template allows network traffic through `HTTP` and `https`.
@@ -167,7 +167,7 @@ When you deploy a JupyterHub on Azure (either using the Deploy to Azure button o
 They are all grouped in the same region defined for your Resource group.
 Also, note that the storage disk created with this template will be of the same type of the `OS disk type` you provide on the template.
 
-If you want to learn more about VM types and sizes, including compatibility between the VMS and storage (standard or premium) you can visit the [official Azure Linux VM documentation](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?WT.mc_id=TLJHbutton-github-taallard).
+If you want to learn more about VM types and sizes, including compatibility between the VMS and storage (standard or premium) you can visit the [official Azure Linux VM documentation](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?WT.mc_id=academic-0000-taallard).
 
 Details on how to delete and stop your virtual machine can be found at [https://the-littlest-jupyterhub.readthedocs.io/en/latest/howto/providers/azure.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/howto/providers/azure.html).
 
@@ -187,17 +187,17 @@ See the [useful tips and commands](#clap-useful-tips-and-commands) section for t
 
 Here are some links that you might find useful when using the contents in this repo.
 
-:book: [Azure Resource Manger templates docs](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview?WT.mc_id=TLJHbutton-github-taallard)
+:book: [Azure Resource Manger templates docs](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview?WT.mc_id=academic-0000-taallard)
 
 :book: [The Littlest JupyterHub docs](https://the-littlest-jupyterhub.readthedocs.io/en/latest/index.html)
 
-:book: [VM available regions - Azure docs](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines&WT.mc_id=TLJHbutton-github-taallard)
+:book: [VM available regions - Azure docs](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines&WT.mc_id=academic-0000-taallard)
 
-:book: [Azure VM sizes documentation](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=TLJHbutton-github-taallard)
+:book: [Azure VM sizes documentation](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general?WT.mc_id=academic-0000-taallard)
 
-:book: [Azure VMs disks documentation](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=TLJHbutton-github-taallard)
+:book: [Azure VMs disks documentation](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types?WT.mc_id=academic-0000-taallard)
 
-:book: [Install the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest?WT.mc_id=TLJHbutton-github-taallard)
+:book: [Install the Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest%3FWT.mc_id%3DTLJHbutton-github-taallard&WT.mc_id=academic-0000-taallard)
 
 ## :clap: Useful tips and commands
 
