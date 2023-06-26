@@ -74,7 +74,7 @@ To deploy your TLJH follow these steps:
 3. Login to your account.
 4. Fill in the details on the next screen: (see details below)
 
-   ![custom template](assets/Custom_deployment_-_Microsoft_Azure.png)
+   ![Azure dashboard - Custom deployment form](assets/custom_deployment_azure.png)
 
    - **Subscription**: choose the subscription you want to use (e.g. Free Trial)
    - **Resource group**: this will keep all of our resources together. If you have never created a resource group click on `Create new` and give it a meaningful name (e.g. `jupyter-resources`)
