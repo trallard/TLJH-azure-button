@@ -2,8 +2,6 @@
 <h1> The Littlest JupyterHub deploy to Azure button </h1>
 </div>
 
-[![GitHub release](https://img.shields.io/github/release/trallard/TLJH-azure-button.svg?colorA=3d3d3d&colorB=22a6b3&style=flat)](https://GitHub.com/trallard/TLJH-azure-button/releases/)
-
 ![NEW](https://img.shields.io/badge/-NEW-gray.svg?colorB=12CBC4) :sparkles::sparkles:
 The minimum VM Ubuntu version has been updated to 22.4 thanks to @ionicsolutions :sparkles::sparkles:
 
