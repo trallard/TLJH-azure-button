@@ -81,7 +81,7 @@
             "metadata": {
                 "description": "The URL where the install script is located. If you do not require additional plugins or custom installs leave the default"
             },
-            "defaultValue": "https://raw.githubusercontent.com/trallard/TLJH-azure-button/master/scripts/install.sh"
+            "defaultValue": "https://raw.githubusercontent.com/trallard/TLJH-azure-button/main/scripts/install.sh"
         },
         "dataDiskSize": {
             "type": "string",
@@ -251,8 +251,7 @@
                 "name": "[parameters('osDiskType')]"
             },
             "kind": "Storage",
-            "properties": {
-            }
+            "properties": {}
         },
         {
             "type": "Microsoft.Compute/disks",
