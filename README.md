@@ -10,7 +10,7 @@ The minimum VM Ubuntu version has been updated to 22.4 thanks to @ionicsolutions
 <table style="width:auto; margin-left:auto; margin-right:auto;">
  <tr>
  <td align='center' width='100%'>
- <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmaster%2Fazuredeploy.json" target="_blank">
+ <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftrallard%2FTLJH-azure-button%2Fmain%2Fazuredeploy.json" target="_blank">
  <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true"/>
 
  </a>
@@ -30,26 +30,28 @@ The minimum VM Ubuntu version has been updated to 22.4 thanks to @ionicsolutions
  </tr>
 </table>
 
-- [Prerequisites  📝](#prerequisites--)
 - [What is the Littlest JupyterHub? 🤔](#what-is-the-littlest-jupyterhub-)
+- [Prerequisites 📝](#prerequisites-)
 - [What is in this repo? 🔍](#what-is-in-this-repo-)
 - [How does the Deploy on Azure button work? 💻](#how-does-the-deploy-on-azure-button-work-)
 - [Deployment instructions 🚀](#deployment-instructions-)
 - [Customising the installer ✨](#customising-the-installer-)
 - [Architecture 🚧](#architecture-)
+- [Deleting your resources 🗑](#deleting-your-resources-)
 - [Additional resources 📖](#additional-resources-)
 - [Useful tips and commands 👏](#useful-tips-and-commands-)
 - [Issues and contributing 🖖🏼](#issues-and-contributing-)
 
-## Prerequisites  📝 
-
-You need an Azure account to be able to spin your JupyterHub.
-
-:star: If you do not have an Azure subscription you can get started with a [free Azure subscription with 200 USD](https://azure.microsoft.com/free/)
-
 ## What is the Littlest JupyterHub? 🤔
 
 A simple JupyterHub distribution for a small (1-100) number of users on a single server. You can find more info about it in the [official docs][TLJH-docs].
+
+## Prerequisites 📝
+
+You need an Azure account to be able to spin your JupyterHub.
+
+🤩 If you do not have an Azure subscription you can get started with a [free Azure subscription with 200 USD](https://azure.microsoft.com/free/)
+
 
 ## What is in this repo? 🔍
 
@@ -63,7 +65,8 @@ The ARM template contains all the configurations needed to deploy your own Littl
 
 This template follows the configuration detailed in [https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html). But it reduces some friction by eliminating the need to create resources manually using the Azure portal.
 
-🚨 Note that you still need to remove your resources manually when you are done using them. Otherwise, you will be charged for their use.
+> **Note**
+> You still need to remove your resources manually when you are done using them. Otherwise, you will be charged for their use.
 
 ## Deployment instructions 🚀
 
@@ -72,7 +75,7 @@ To deploy your TLJH follow these steps:
 1. Create an Azure account (if you need a free one go to 👉🏼 [this link](https://azure.microsoft.com/free) 👈🏼)
 2. Click on the `Deploy to Azure` button at the top of this README. This will redirect you to the Azure portal login page.
 3. Login to your account.
-4. Fill in the details on the next screen: (see details below)
+4. Fill in the details on the next screen (see details below):
 
    ![Azure dashboard - Custom deployment form](assets/custom_deployment_azure.png)
 
@@ -95,13 +98,14 @@ To deploy your TLJH follow these steps:
 
 6. To check your new Virtual Machine Expand the left-hand panel by clicking on the ">>" button in the top left corner of your dashboard. Find the Virtual Machines tab and click on it.
 
-![azure portal vm](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/azure-vms.png)
+   ![azure portal vm](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/azure-vms.png)
 
 7. Click on your Virtual Machine, copy the **Public IP address** and access it through your web browser.
 
    ![ip](https://the-littlest-jupyterhub.readthedocs.io/en/latest/_images/ip-vm.png)
 
-   🚨 Note this page will be unavailable during the installation of the server. If this happens, be patient, give it a bit longer and refresh the page.
+   >**Warning**
+   >This page will be unavailable during the installation of the server. If this happens, be patient, give it a bit longer and refresh the page.
 
    Once the installation is complete, you will get a login page like the one below:
 
@@ -112,9 +116,9 @@ To deploy your TLJH follow these steps:
 8. Login using the **admin username and password** you created before
 9. Congratulations you have a running working JupyterHub 🎉
 
-👩🏿‍💻✨ You are now ready to add users, install packages and start using your JupyterHub. For instructions on how to do this visit 👉🏼 [the official documentation](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html#step-2-adding-more-users).
+👩🏿‍💻✨ You are now ready to add users, install packages and start using your JupyterHub. For instructions on how to do this visit 👉🏼 [the official The Littlest JupyterHub documentation](https://the-littlest-jupyterhub.readthedocs.io/en/latest/install/azure.html#step-2-adding-more-users).
 
-## Customising the installer ✨ 
+## Customising the installer ✨
 
 You can customise the installer by adding command line parameters. From v1.1.0 you can now specify a TLJH install script to customise the installation.
 
@@ -175,7 +179,9 @@ Details on how to delete and stop your virtual machine can be found at [https://
 
 If you want to get rid of all the associated resources after you are done with your JupyterHub the easiest way to do it is to delete the resource group altogether (provided you do not have other resources in this group that you might need later).
 
-⚡️ To delete a resource group from the Azure portal:
+## Deleting your resources 🗑
+
+To delete a resource group from the Azure portal:
 
 1. Go to **Resource groups** on the left-hand panel of your Azure Portal.
 2. Click on the resource group that contains your JupyterHub resources.
